@@ -1,5 +1,12 @@
 https://github.com/holoc2021tv/my-project-da24ttc-t01.git
 
+Sử dụng lệnh này để lấy code github về:
+git clone <URL>
+Sau khi làm xong thực hiện push:
+git add .
+git commit -m""
+git push
+
 echo "# my-project-da24ttc-t01" >> README.md
 git init
 git add README.md
@@ -14,3 +21,4 @@ git push -u origin main
 
 Lệnh bắt buộc code lên nhánh main nếu xung đột
 git push -f origin main
+
