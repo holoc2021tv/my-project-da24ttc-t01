@@ -11,3 +11,6 @@ git push -u origin main
 git remote add origin https://github.com/holoc2021tv/my-project-da24ttc-t01.git
 git branch -M main
 git push -u origin main
+
+Lệnh bắt buộc code lên nhánh main nếu xung đột
+git push -f origin main
