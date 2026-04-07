@@ -1,1 +1,53 @@
-﻿
+﻿body{
+	margin: 30px;
+	font-family: arial;
+	color: black;
+	background-color: cyan;
+}
+
+a {
+	color: red;
+}
+
+.phandau {
+	text-align: center;
+	background-color: yellow;
+	color: red;
+}
+
+.anh {
+	width: 120px;
+	height: 150px;
+	
+}
+
+.gioithieubanthan td,h2{
+		text-align: center;
+		color: blue;
+		font-size: 50px;
+}
+
+h3{
+	color: blue;
+	
+}
+
+p{
+	font-size: 25px;
+	
+}
+.ttchitiet{
+	font-size: 20px;
+}
+.sothich {
+	font-size: 20px;
+	
+}
+
+.kynangvamuctieu {
+	font-size: 20px;
+}
+
+.lienhe {
+	
+}
