@@ -41,11 +41,18 @@ p{
 }
 .sothich {
 	font-size: 20px;
-	
+	border-left: 20px solid yellow;
+	padding: 10px;
+	background: white;
+	border-radius: 8px;
 }
 
 .kynangvamuctieu {
 	font-size: 20px;
+	border-left: 20px solid yellow;
+	padding: 10px;
+	background: white;
+	border-radius: 8px;
 }
 
 .lienhe {
