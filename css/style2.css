@@ -1,0 +1,37 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    padding: 20px;
+    text-align: center;
+}
+
+div.container{
+    background-color:darkslategrey;
+    color:rgb(235, 56, 175);
+    border-radius: 30px;
+}
+
+form#frmLogin{
+    background-color:rgb(55, 243, 243);
+    margin: 50px;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
+h3.title{
+    text-transfrom: uppercase;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: larger;
+    text-align: center;
+}
+
+div.from-group{
+    margin-button: 10px;
+    margin-top: 10px;
+}
+
+label{
+    color:rgb(199, 39, 11);
+    font-weight: bolder;
+}
