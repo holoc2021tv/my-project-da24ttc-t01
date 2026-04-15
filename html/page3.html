@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Đăng ký câu lạc bộ GIT</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+    <div class="container">
+        <form id="frmSign">
+            <h3>Đăng ký câu lạc bộ GIT</h3>
+            <div class="hoten">
+                <label for="hovaten">Họ và tên:</label>
+                <input type="text" id="hovaten" placeholder="Nhập họ và tên của bạn">
+            </div>
+
+            <div class="mssv">
+                <label for="mssv">Mã sinh viên:</label>
+                <input type="text" id="mssv" placeholder="Nhập mã sinh viên">
+            </div>
+
+            <div class="lop">
+                <label for="lop">Lớp:</label>
+                <select id="lop">
+                    <option value="DA24TTA">Lớp DA24TTA</option>
+                    <option value="DA24TTB">Lớp DA24TTB</option>
+                    <option value="DA24TTC">Lớp DA24TTC</option>
+                    <option value="DA24TTD">Lớp DA24TTD</option>
+                </select>
+            </div>
+
+            <div class="gioitinh">
+                <label for="gioitinh"><b>Giới tính:</b></label>
+                <div class="radio-wrapper">
+                    <input type="radio" id="nam" name="gioitinh" value="nam">
+                    <label for="nam">Nam</label>
+                    <input type="radio" id="nu" name="gioitinh" value="nu">
+                    <label for="nu">Nữ</label>
+                </div>
+            </div>
+
+            <div class="ngaysinh">
+                <label for="ngaysinh">Ngày sinh:</label>
+                <input type="date" id="ngaysinh">
+            </div>
+
+            <div class="diemmanh">
+                <label for="diemmanh"><b>Điểm mạnh của bạn:</b></label>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="c_css" value="C_CSS"> <label for="c_css">Lập trình C/CSS</label><br>
+                    <input type="checkbox" id="html" value="HTML"> <label for="html">Lập trình HTML</label><br>
+                    <input type="checkbox" id="java" value="Java"> <label for="java">Lập trình Java</label>
+                </div>
+            </div>
+
+            <div class="sdt-diachi">
+                <label for="sdt">Số điện thoại & Địa chỉ:</label>
+                <div class="row-inner">
+                    <input type="text" id="sdt" placeholder="Số điện thoại">
+                    <input type="text" id="diachi" placeholder="Địa chỉ">
+                </div>
+            </div>
+
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Nhập email của bạn" placeholder="Nhập email của bạn">
+            </div>
+
+            <div class="hinhanh">
+                <label for="hinhanh">Hình ảnh:</label>
+                <input type="file" id="hinhanh" accept="image/*">
+            </div>
+
+            <div class="nut-bam">
+					<input type = "submit" name = "sbSignup" value="Đăng ký">
+					<input type = "reset" name = "rsCancel" value="Hủy bỏ">
+				</div>
+        </form>
+    </div>
+</body>
+</html>

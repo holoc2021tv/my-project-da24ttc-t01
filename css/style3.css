@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #eaf8ff;
+    border-radius: 40px;
+    border: 3px solid #a3cf2d;
+}
+
+form#frmSign {
+    display: grid;
+    /* Ép chia làm 3 cột bằng nhau cho toàn bộ form */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    background-color: #37f3f3;
+    padding: 40px;
+    border-radius: 40px;
+    font-size: 18px;
+}
+
+h3 {
+    grid-column: span 3;
+    color: #2563EB;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hoten, .mssv, .lop, .ngaysinh, {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.email {
+    grid-column: span 1; 
+}
+
+
+.sdt-diachi {
+    grid-column: span 3;
+}
+
+
+.diemmanh, .hinhanh {
+    grid-column: span 3;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hoten, .mssv, .lop, .ngaysinh label {
+    font-weight: 700;
+}
+
+.hinhanh label {
+    font-weight: 700;
+}
+
+.sdt-diachi label {
+    font-weight: 700;
+}
+
+.email label {
+    font-weight: 700;
+}
+
+.hoten, .mssv, .lop, .ngaysinh, .gioitinh input {
+    font-size: 18px;
+}
+.hinhanh input[type="file"] {
+    padding: 10px 12px;
+    width: 60%;
+    max-width: 420px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.nut-bam {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.nut-bam input[type="submit"],
+.nut-bam input[type="reset"] {
+    font-size: 20px;
+    padding: 12px 22px;
+    min-width: 140px;
+    border-radius: 12px;
+    border: 2px solid #2563EB;
+    background: #fff;
+    color: #2563EB;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.nut-bam input[type="submit"] {
+    background: #2563EB;
+    color: #fff;
+}

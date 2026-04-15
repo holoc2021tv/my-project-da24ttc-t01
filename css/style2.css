@@ -3,12 +3,29 @@
     font-size: 25px;
     padding: 20px;
     text-align: center;
+    
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 div.container{
     background-color:#eaf8ff;
     color:#2563EB;
     border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+
 }
 
 form#frmLogin{
@@ -19,15 +36,15 @@ form#frmLogin{
 }
 
 h3{
-    color:#da5f0d;
+    color:#2563EB;
     text-transform: uppercase;
     font-weight: bolder;
-    letter-spacing: 3px;
-    font-size: larger;
+    letter-spacing: 2px;
+    font-size: 36px;
     text-align: center;
 }
 
-div.from-group{
+div.form-group{
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -37,8 +54,28 @@ label{
     font-weight: bolder;
 }
 
-div.nut-bam input{
+.nut-bam {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.nut-bam input[type="submit"],
+.nut-bam input[type="reset"] {
+    font-size: 20px;
+    padding: 12px 22px;
+    min-width: 140px;
+    border-radius: 12px;
+    border: 2px solid #2563EB;
+    background: #fff;
     color: #2563EB;
-    font-weight: bolder;
-    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.nut-bam input[type="submit"] {
+    background: #2563EB;
+    color: #fff;
 }
