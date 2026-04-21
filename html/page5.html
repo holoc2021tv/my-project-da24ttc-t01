@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế web với html, css</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style5.css">
+	</head>
+	
+		<body>
+		<div class="container">
+			<form id = "frmInBangCC">
+				<h2>In Bảng cửu chương</h2>
+					<label for="textfield">Nhập số: </label>
+					<input class="form-control" type="number" id="frmInBangCC" value="5" placeholder="Nhập bản cửu chương cần tìm">
+                    <button type="button" onclick="inBCC()">In</button>
+                    
+        <div class="leq" id="kq">
+        </div>
+
+         <script>
+                const myfrom = document.forms[frmInBangCC];
+                const myTextfield = myfrom.elements[0];
+                let num = parseInt(myTextfield.value);
+
+                for(let i=1; i<=10; i++)
+            {
+                kq += num + " * " + i + " = " + num*i + "<br>";
+            }
+
+            document.getElementById("kq").innerHTML=kq;
+            </script>
+            </form>
+		</div>	
+	</body>
+</html>
