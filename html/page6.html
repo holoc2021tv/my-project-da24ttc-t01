@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<title>Thiết kế web với html, css</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/style6.css">
+	</head>
+		<body>
+		<script>
+            // 1. Thêm div product-item
+            const newDiv = document.createElement("div");
+            newDiv.setAttribute("class","product-item");
+            //2. Thêm div product-image
+            const productImage = document.createElement("div");
+            productImage.setAttribute("class","product-image");
+            //3. Thêm div product-info
+            const productImageNode = document.createElement("img");
+            productImageNode.setAttribute("src","../assets/images/suaongtho.jpg");
+            newDiv.appendChild(productImageNode);
+            //4. Thêm div thông tin
+            const productInfo = document.createElement("div");
+            productInfo.setAttribute("class","product-info");
+            //a.Tạo tên
+            const productName = document.createElement("p");
+            productName.setAttribute("class","product-info");
+            productName.textContent="Sữa Ông Thọ";
+            newDiv.appendChild(productName);
+            //b.Tạo giá
+            const productPrice = document.createElement("p");
+            productPrice.setAttribute("class","product-info");
+            productPrice.textContent="25,900 VND";
+            newDiv.appendChild(productPrice);
+            //c. Tạo link
+            const productLink = document.createElement("a");
+            productLink.setAttribute("href","https://www.lottemart.vn/vi-nsg/product/sd-o-tho-trang-chu-xanh-380g-8934673311502-p3902?srsltid=AfmBOooU1aqev98Vtx_Ei4UlbvVKJpB-Bn1toDcwXXBOdJ_QK37-Y36i");
+            productLink.textContent = "Chi Tiét";
+            newDiv.appendChild(productLink);
+            // Gán vào Div
+            document.body.appendChild(newDiv);
+
+        </script>
+	</body>
+</html>
