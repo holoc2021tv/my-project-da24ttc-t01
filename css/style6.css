@@ -1,9 +1,58 @@
+/* Khung sản phẩm */
 .product-item {
-    color: green;
-    display: block;
+    width: 220px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+    transition: 0.3s;
 }
 
-.src{
+/* Hiệu ứng hover */
+.product-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Ảnh sản phẩm */
+.product-image img {
+    width: 100%;
+    height: auto;
     display: block;
-    
+    border-radius: 6px;
+}
+
+/* Khối thông tin */
+.product-info {
+    margin-top: 10px;
+}
+
+/* Tên sản phẩm */
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Giá */
+.product-price {
+    color: red;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+/* Link chi tiết */
+.product-info a {
+    display: inline-block;
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.product-info a:hover {
+    background: #218838;
 }
