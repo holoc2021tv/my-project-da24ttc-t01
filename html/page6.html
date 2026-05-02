@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="vi">
-	<head>
-		<title>Thiết kế web với html, css</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="../css/style6.css">
-	</head>
-		<body>
-		<script>
-            // 1. Thêm div product-item
-            const newDiv = document.createElement("div");
-            newDiv.setAttribute("class","product-item");
-            //2. Thêm div product-image
-            const productImage = document.createElement("div");
-            productImage.setAttribute("class","product-image");
-            //3. Thêm div product-info
-            const productImageNode = document.createElement("img");
-            productImageNode.setAttribute("src","../assets/images/suaongtho.jpg");
-            newDiv.appendChild(productImageNode);
-            //4. Thêm div thông tin
-            const productInfo = document.createElement("div");
-            productInfo.setAttribute("class","product-info");
-            //a.Tạo tên
-            const productName = document.createElement("p");
-            productName.setAttribute("class","product-info");
-            productName.textContent="Sữa Ông Thọ";
-            newDiv.appendChild(productName);
-            //b.Tạo giá
-            const productPrice = document.createElement("p");
-            productPrice.setAttribute("class","product-info");
-            productPrice.textContent="25,900 VND";
-            newDiv.appendChild(productPrice);
-            //c. Tạo link
-            const productLink = document.createElement("a");
-            productLink.setAttribute("href","https://www.lottemart.vn/vi-nsg/product/sd-o-tho-trang-chu-xanh-380g-8934673311502-p3902?srsltid=AfmBOooU1aqev98Vtx_Ei4UlbvVKJpB-Bn1toDcwXXBOdJ_QK37-Y36i");
-            productLink.textContent = "Chi Tiét";
-            newDiv.appendChild(productLink);
-            // Gán vào Div
-            document.body.appendChild(newDiv);
+<head>
+    <title>Thiết kế web với html, css</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style6.css">
+</head>
+<body>
 
-        </script>
-	</body>
+    <h2>Danh sách sản phẩm</h2>
+    
+    
+<button onclick="addProduct('Sữa Susu Vị Dâu', '4.914 VND', '../assets/images/susuvidau.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-dau/')">
+        Thêm Sữa Susu Vị Dâu
+    </button>
+
+    <button onclick="addProduct('Sữa Susu Vị Cam', '4.914 VND', '../assets/images/susuvicam.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-cam/')">
+        Thêm Sữa Susu Vị Cam
+    </button>
+
+    <button onclick="addProduct('Sữa Susu Vị Socola', '4.914 VND', '../assets/images/susuvisocola.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-socola/')">
+        Thêm Sữa Susu Vị Socola
+    </button>
+
+
+    <div class="list-product" id="product-container"></div>
+
+    <script>
+        function addProduct(name, price, imgSource, linkUrl) {
+            const container = document.getElementById("product-container");
+
+            const productItem = document.createElement("div");
+            productItem.className = "product-item";
+
+            const productImage = document.createElement("div");
+            productImage.className = "product-image";
+            const imgNode = document.createElement("img");
+            imgNode.src = imgSource;
+            productImage.appendChild(imgNode);
+
+            const productInfo = document.createElement("div");
+            productInfo.className = "product-info";
+
+            const productName = document.createElement("p");
+            productName.textContent = name;
+
+            const productPrice = document.createElement("p");
+            productPrice.textContent = price;
+
+            const productLink = document.createElement("a");
+            productLink.href = linkUrl;
+            productLink.textContent = "Chi Tiết";
+
+            productInfo.appendChild(productName);
+            productInfo.appendChild(productPrice);
+            productInfo.appendChild(productLink);
+
+            productItem.appendChild(productImage);
+            productItem.appendChild(productInfo);
+
+            container.appendChild(productItem);
+        }
+    </script>
+</body>
 </html>
