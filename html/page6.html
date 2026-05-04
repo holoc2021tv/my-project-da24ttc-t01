@@ -9,56 +9,77 @@
 
     <h2>Danh sách sản phẩm</h2>
     
-    
-<button onclick="addProduct('Sữa Susu Vị Dâu', '4.914 VND', '../assets/images/susuvidau.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-dau/')">
-        Thêm Sữa Susu Vị Dâu
-    </button>
+    <!-- Các nút thêm nhanh có sẵn -->
+    <div class="quick-add">
+        <button onclick="addProduct('Susu Hương Kẹo Marshmallow Kiwi', '37.584₫', '../assets/images/SuSuMarshmallowKiwi.jpg', 'https://www.vinamilk.com.vn/products/...')">
+            Thêm Susu Kiwi
+        </button>
+        <button onclick="addProduct('Susu Hương Kẹo Bông', '37.584₫', '../assets/images/SuSuKeoBong.jpg', 'https://www.vinamilk.com.vn/products/...')">
+            Thêm Susu Kẹo Bông
+        </button>
+        <button onclick="addProduct('Susu Hương Marshmallow dâu', '30.240₫', '../assets/images/SuSuMarshmallowdau.jpg', 'https://www.vinamilk.com.vn/products/...')">
+            Thêm Susu Dâu
+        </button>
+        <button onclick="addProduct('Susu Hương đào vải', '30.240₫', '../assets/images/SuSudaovai.jpg', 'https://www.vinamilk.com.vn/products/...')">
+            Thêm Susu Đào Vải
+        </button>
+    </div>
 
-    <button onclick="addProduct('Sữa Susu Vị Cam', '4.914 VND', '../assets/images/susuvicam.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-cam/')">
-        Thêm Sữa Susu Vị Cam
-    </button>
+    <!-- Form để người dùng tự nhập -->
+    <div class="control-panel">
+        <input type="text" id="txtName" placeholder="Tên sản phẩm...">
+        <input type="text" id="txtPrice" placeholder="Giá tiền...">
+        <input type="text" id="txtImg" placeholder="Đường dẫn ảnh...">
+        <button onclick="handleBtnClick()">Thêm sản phẩm</button>
+    </div>
 
-    <button onclick="addProduct('Sữa Susu Vị Socola', '4.914 VND', '../assets/images/susuvisocola.jpg', 'https://www.vinamilk.com.vn/susu-vn/san-pham/sua-chua-uong-tiet-trung/vi-socola/')">
-        Thêm Sữa Susu Vị Socola
-    </button>
-
-
+    <!-- Nơi sản phẩm xuất hiện bên tay phải -->
     <div class="list-product" id="product-container"></div>
 
     <script>
-        function addProduct(name, price, imgSource, linkUrl) {
+        // 1. Hàm xử lý khi nhấn nút "Thêm sản phẩm" từ ô nhập liệu
+        function handleBtnClick() {
+            const name = document.getElementById("txtName").value;
+            const price = document.getElementById("txtPrice").value;
+            const img = document.getElementById("txtImg").value;
+
+            if (name === "" || price === "") {
+                alert("Bạn ơi, bạn cần nhập tên và giá nhé!");
+                return;
+            }
+
+            // Gọi hàm addProduct chính
+            addProduct(name, price, img, "#");
+
+            // Xóa trống ô nhập để nhập tiếp
+            document.getElementById("txtName").value = "";
+            document.getElementById("txtPrice").value = "";
+            document.getElementById("txtImg").value = "";
+        }
+
+        // 2. Hàm chính addProduct (Súc tích, dùng Template String)
+        function addProduct(name, price, imgSource, linkUrl = "#") {
             const container = document.getElementById("product-container");
 
+            // Tạo thẻ div bao quanh (product-item)
             const productItem = document.createElement("div");
             productItem.className = "product-item";
 
-            const productImage = document.createElement("div");
-            productImage.className = "product-image";
-            const imgNode = document.createElement("img");
-            imgNode.src = imgSource;
-            productImage.appendChild(imgNode);
+            // Đổ nội dung vào thẻ div (Giao diện giống hệt ảnh image_62d267.png)
+            productItem.innerHTML = `
+                <div class="product-image">
+                    <img src="${imgSource}" alt="${name}">
+                </div>
+                <div class="product-info">
+                    <p class="name">${name}</p>
+                    <p class="price"><strong>${price}</strong></p>
+                    <a href="${linkUrl}" target="_blank">Chi Tiết</a>
+                </div>
+            `;
 
-            const productInfo = document.createElement("div");
-            productInfo.className = "product-info";
-
-            const productName = document.createElement("p");
-            productName.textContent = name;
-
-            const productPrice = document.createElement("p");
-            productPrice.textContent = price;
-
-            const productLink = document.createElement("a");
-            productLink.href = linkUrl;
-            productLink.textContent = "Chi Tiết";
-
-            productInfo.appendChild(productName);
-            productInfo.appendChild(productPrice);
-            productInfo.appendChild(productLink);
-
-            productItem.appendChild(productImage);
-            productItem.appendChild(productInfo);
-
+            // Thêm vào container (Dàn hàng ngang nhờ Flexbox trong CSS)
             container.appendChild(productItem);
+            console.log("Đã thêm sản phẩm: " + name);
         }
     </script>
 </body>

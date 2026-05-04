@@ -1,24 +1,47 @@
-        .list-product {
-            display: flex;       /* Kích hoạt Flexbox */
-            flex-wrap: wrap;    /* Tự động xuống dòng nếu hết chỗ */
-            gap: 20px;          /* Khoảng cách giữa các sản phẩm */
-            padding: 20px;
-        }
+/* style6.css */
+.list-product {
+    display: flex;          /* Kích hoạt Flexbox */
+    flex-direction: row;    /* Dàn hàng ngang */
+    flex-wrap: wrap;        /* Tự xuống hàng khi hết chỗ */
+    gap: 20px;
+    margin-top: 20px;
+}
 
-        .product-item {
-            width: 200px;       /* Độ rộng cố định cho mỗi thẻ sản phẩm */
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-            border-radius: 8px;
-        }
+.product-item {
+    width: 230px;           /* Độ rộng cố định cho mỗi hộp */
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
 
-        .product-image img {
-            width: 100%;        /* Ảnh tự co giãn theo khung */
-            height: auto;
-        }
+.product-image img {
+    width: 100%;
+    height: 180px;          /* Chiều cao cố định để các hộp đều nhau */
+    object-fit: contain;    /* Giữ tỉ lệ ảnh sữa SuSu */
+    margin-bottom: 10px;
+}
 
-        .product-info p {
-            margin: 5px 0;
-            font-weight: bold;
-        }
+.name {
+    font-weight: bold;
+    min-height: 40px;       /* Đảm bảo tên dài không làm lệch hộp */
+}
+
+.price {
+    color: #334155;
+    margin: 8px 0;
+}
+
+.control-panel {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.control-panel input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
