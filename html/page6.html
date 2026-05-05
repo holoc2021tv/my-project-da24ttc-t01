@@ -3,84 +3,27 @@
 <head>
     <title>Thiết kế web với html, css</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/style6.css">
+   <!-- <link rel="stylesheet" href="../css/style6.css">-->
+    <script src="../js/lib.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
     <h2>Danh sách sản phẩm</h2>
-    
-    <!-- Các nút thêm nhanh có sẵn -->
-    <div class="quick-add">
-        <button onclick="addProduct('Susu Hương Kẹo Marshmallow Kiwi', '37.584₫', '../assets/images/SuSuMarshmallowKiwi.jpg', 'https://www.vinamilk.com.vn/products/...')">
-            Thêm Susu Kiwi
-        </button>
-        <button onclick="addProduct('Susu Hương Kẹo Bông', '37.584₫', '../assets/images/SuSuKeoBong.jpg', 'https://www.vinamilk.com.vn/products/...')">
-            Thêm Susu Kẹo Bông
-        </button>
-        <button onclick="addProduct('Susu Hương Marshmallow dâu', '30.240₫', '../assets/images/SuSuMarshmallowdau.jpg', 'https://www.vinamilk.com.vn/products/...')">
-            Thêm Susu Dâu
-        </button>
-        <button onclick="addProduct('Susu Hương đào vải', '30.240₫', '../assets/images/SuSudaovai.jpg', 'https://www.vinamilk.com.vn/products/...')">
-            Thêm Susu Đào Vải
-        </button>
+   
+    <div class="container">
+        <div class="product-list row row-cols-1 row-cols-4 g-4" id="product-list">
+
+        </div>
     </div>
-
-    <!-- Form để người dùng tự nhập -->
-    <div class="control-panel">
-        <input type="text" id="txtName" placeholder="Tên sản phẩm...">
-        <input type="text" id="txtPrice" placeholder="Giá tiền...">
-        <input type="text" id="txtImg" placeholder="Đường dẫn ảnh...">
-        <button onclick="handleBtnClick()">Thêm sản phẩm</button>
-    </div>
-
-    <!-- Nơi sản phẩm xuất hiện bên tay phải -->
-    <div class="list-product" id="product-container"></div>
-
     <script>
-        // 1. Hàm xử lý khi nhấn nút "Thêm sản phẩm" từ ô nhập liệu
-        function handleBtnClick() {
-            const name = document.getElementById("txtName").value;
-            const price = document.getElementById("txtPrice").value;
-            const img = document.getElementById("txtImg").value;
-
-            if (name === "" || price === "") {
-                alert("Bạn ơi, bạn cần nhập tên và giá nhé!");
-                return;
-            }
-
-            // Gọi hàm addProduct chính
-            addProduct(name, price, img, "#");
-
-            // Xóa trống ô nhập để nhập tiếp
-            document.getElementById("txtName").value = "";
-            document.getElementById("txtPrice").value = "";
-            document.getElementById("txtImg").value = "";
-        }
-
-        // 2. Hàm chính addProduct (Súc tích, dùng Template String)
-        function addProduct(name, price, imgSource, linkUrl = "#") {
-            const container = document.getElementById("product-container");
-
-            // Tạo thẻ div bao quanh (product-item)
-            const productItem = document.createElement("div");
-            productItem.className = "product-item";
-
-            // Đổ nội dung vào thẻ div (Giao diện giống hệt ảnh image_62d267.png)
-            productItem.innerHTML = `
-                <div class="product-image">
-                    <img src="${imgSource}" alt="${name}">
-                </div>
-                <div class="product-info">
-                    <p class="name">${name}</p>
-                    <p class="price"><strong>${price}</strong></p>
-                    <a href="${linkUrl}" target="_blank">Chi Tiết</a>
-                </div>
-            `;
-
-            // Thêm vào container (Dàn hàng ngang nhờ Flexbox trong CSS)
-            container.appendChild(productItem);
-            console.log("Đã thêm sản phẩm: " + name);
-        }
-    </script>
+        productList.forEach(function(item) {
+            addProduct(item.id, item.name, item.price, item.image, item.productLink);
+        });
+        </script>
 </body>
 </html>
