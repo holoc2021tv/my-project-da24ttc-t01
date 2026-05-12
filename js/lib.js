@@ -1,5 +1,5 @@
 ﻿const productList = [
-{ id: 1 ,   
+{ id: "1" ,   
     name: "Bàng Singapore" ,
     price: "130.000đ" ,
     image: "../assets/images/bang-singapore-phong-thuy.jpg",
@@ -7,7 +7,7 @@
     desc: "Dáng cao sang trọng, lá to, tạo điểm nhấn hiện đại cho nội thất." 
 },
 
-{ id: 2 , 
+{ id: "2" , 
     name: "Cây Hạnh Phúc" , 
     price: "155.000đ" , 
     image: "../assets/images/cay-hanh-phuc.jpg" , 
@@ -15,7 +15,7 @@
     desc: "Mang lại sự bình yên, ấm áp và gắn kết cho gia đình." 
 },
 
-{ id: 3 ,
+{ id: "3" ,
      name: "Cây Kim Tiền" ,
       price: "150.000đ" , 
       image: "../assets/images/cay-kiem-tien.jpg" , 
@@ -23,7 +23,7 @@
       desc: "Mang ý nghĩa về sự giàu có, thịnh vượng và may mắn." 
     },
     
-    { id: 4 , 
+    {   id: "4" , 
         name: "Cây Lan Ý" , 
         price: "100.000đ " , 
         image: "../assets/images/cay-lan-y.jpg" , 
@@ -31,7 +31,7 @@
         desc: "Hoa trắng tinh khôi, có khả năng khử các độc tố trong không khí." 
     },
 
-    { id: 5 , 
+    {   id: "5" , 
         name: "Cây Lưỡi Hổ" , 
         price: "120.000đ " , 
         image: "../assets/images/luoi-ho.jpg" , 
@@ -39,7 +39,7 @@
         desc: "Lá cứng, thẳng đứng, có khả năng lọc không khí và mang lại sự mạnh mẽ, kiên cường." 
     },
     
-    { id: 6 ,
+    {   id: "6" ,
         name: "Cây Ngũ Gia Bì" , 
         price: "140.000đ" , 
         image: "../assets/images/cay-ngu-giai-bi.jpg" , 
@@ -47,7 +47,7 @@
         desc: "Lá xanh quanh năm, có tác dụng xua đuổi muỗi rất hiệu quả." 
     },
     
-    { id: 7 , 
+    {   id: "7" , 
         name: "Trầu Bà Đế Vương" , 
         price: "180.000đ" , 
         image: "../assets/images/trau-ba-de-vuong.jpg" , 
@@ -55,14 +55,15 @@
         desc: "Lá xanh quanh năm, có tác dụng xua đuổi muỗi rất hiệu quả." 
     },
     
-    { id: 8 , 
+    {  id: "8" , 
         name: "Tùng La Hán" , 
         price: "500.000đ " , 
         image: "../assets/images/cay-tung-la-hang.jpg" , 
         productLink: "product-detail.html" , 
         desc: "Mang ý nghĩa về sự trường thọ, sức khỏe" 
     },
-    { id: 9 ,
+
+    {   id: "9" ,
         name: "Sen Đá" , 
         price: "15.000đ" , 
         image: "../assets/images/sen-da.jpg" , 
@@ -70,7 +71,8 @@
         desc: "Cây sen đá có khả năng chịu hạn tốt, dễ chăm sóc và mang lại sự năng động cho không gian sống."
     },
     
-    { id: 10 , name: "Xương Rồng" , 
+    {   id: "10" , 
+        name: "Xương Rồng" , 
         price: "20.000đ" , 
         image: "../assets/images/xuong-rong.jpg" , 
         productLink: "product-detail.html" , 
@@ -78,13 +80,6 @@
 ];
 
 
-function loadProduct(products)
-{
-    for(let i = 0; i<products.length; i++)
-    {
-        addProduct_v2(products[i]);
-    }
-}
 
 function loadProduct(products)
 {
